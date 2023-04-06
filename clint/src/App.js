@@ -7,6 +7,9 @@ import Appointment from './Pages/Appointment/Appointment';
 import Singup from './Pages/Login/Singup';
 import RequiredAuth from './Pages/Login/RequiredAuth';
 import ResetPassword from './Pages/Login/ResetPassword';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -18,11 +21,17 @@ function App() {
       <Route path='/ResetPassword' element={<ResetPassword></ResetPassword>}></Route>
       <Route path='/signup' element={<Singup></Singup>}></Route>
       <Route path='/Appointment' element={
-      <RequiredAuth>
-        <Appointment></Appointment>
-      </RequiredAuth>}>
+        <RequiredAuth>
+          <Appointment></Appointment>
+        </RequiredAuth>}>
+      </Route>
+      <Route path='/Dashboard' element={
+        <RequiredAuth>
+          <Dashboard></Dashboard>
+        </RequiredAuth>}>
       </Route>
     </Routes>
+    <ToastContainer />
     </div>
   );
 }

@@ -15,6 +15,9 @@ const Navbar = () => {
               <li><a href='/Review'>Review</a></li>
               <li><a href='/Contact'>Contact</a></li>
               <li><a href='/About'>About</a></li>
+              {
+                user && <li><a href='/Dashboard'>Dashboard</a></li> 
+              }
               <li>{user? <button  onClick={logout} className="btn btn-ghost">Sign Out</button>:<a href='/Login'>Login</a>}</li>
     </>
 
